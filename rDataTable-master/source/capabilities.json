@@ -1,0 +1,183 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Values",
+      "kind": "GroupingOrMeasure",
+      "name": "Values"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "scriptResult": {
+        "dataInput": {
+          "table": {
+            "rows": {
+              "select": [
+                {
+                  "for": {
+                    "in": "Values"
+                  }
+                }
+              ],
+              "dataReductionAlgorithm": {
+                "top": {}
+              }
+            }
+          }
+        },
+        "script": {
+          "scriptProviderDefault": "R",
+          "scriptOutputType": "html",
+          "source": {
+            "objectName": "rcv_script",
+            "propertyName": "source"
+          },
+          "provider": {
+            "objectName": "rcv_script",
+            "propertyName": "provider"
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+    "rcv_script": {
+      "properties": {
+        "provider": {
+          "type": {
+            "text": true
+          }
+        },
+        "source": {
+          "type": {
+            "scripting": {
+              "source": true
+            }
+          }
+        }
+      }
+    },
+	"settings_rdatatable_params": {
+      "displayName": "Visual Settings",
+      "description": "Settings to control the look and feel of R DataTable",
+      "properties": {
+        "method": {
+          "displayName": "Initial Entries",
+          "description": "Control the default number of records displayed per page",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "5",
+                "value": "5"
+              },
+              {
+                "displayName": "10",
+                "value": "10"
+              },
+              {
+                "displayName": "25",
+                "value": "25"
+              },
+              {
+                "displayName": "50",
+                "value": "50"
+              },
+              {
+                "displayName": "100",
+                "value": "100"
+              },
+              {
+                "displayName": "1000",
+                "value": "1000"
+              }
+            ]
+          }
+        },
+		"showColumnFilters":{
+            "displayName": "Filters",
+			"description": "Display column filters",
+            "type": {
+              "enumeration": [
+				  {
+					"displayName": "Top",
+					"value": "top"
+				  },
+				  {
+					"displayName": "Bottom",
+					"value": "bottom"
+				  },
+				  {
+					"displayName": "None",
+					"value": "none"
+				  }
+				]
+            }
+        },
+		"limitDecimalPlaces":{
+            "displayName": "Decimal digits",
+			"description": "Limit decimal places for decimal fields. Not able to obtain user-specified formatting at the field level for R visuals.",
+            "type": {
+              "enumeration": [
+				  {
+					"displayName": "0",
+					"value": "0"
+				  },
+				  {
+					"displayName": "1",
+					"value": "1"
+				  },
+				  {
+					"displayName": "2",
+					"value": "2"
+				  },
+				  {
+					"displayName": "3",
+					"value": "3"
+				  },
+				  {
+					"displayName": "4",
+					"value": "4"
+				  },
+				  {
+					"displayName": "5",
+					"value": "5"
+				  }
+				]
+            }
+        },
+		"fontSize": {
+          "displayName": "Font size",
+          "description": "Adjust the font size for column headings and values",
+          "type": {
+            "enumeration": [{
+                "displayName": "10",
+                "value": "10px"
+              },
+              {
+                "displayName": "12",
+                "value": "12px"
+              },
+              {
+                "displayName": "14",
+                "value": "14px"
+              },
+              {
+                "displayName": "16",
+                "value": "16px"
+              },
+              {
+                "displayName": "18",
+                "value": "18px"
+              },
+              {
+                "displayName": "20",
+                "value": "20px"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "suppressDefaultTitle": true
+}
